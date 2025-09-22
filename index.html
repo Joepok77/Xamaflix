@@ -3,15 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="streaming, films, séries, cinéma" />
+    <!--  <link rel="canonical" href="https://www.xamaflix.com"> -->
+    <meta name="author" content="Xamaflix" />
     <meta
       name="description"
       content="Plateforme de streaming de films et séries"
     />
+    <link rel="stylesheet" href="css/style.css">
     <title>Xamaflix - Votre plateforme de streaming</title>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <header>
-        <h1 class="sr-only">Xamaflix - Plateforme de streaming</h1>
+      <h1 class="sr-only">Xamaflix - Plateforme de streaming</h1>
       <nav aria-label="Navigation principale">
         <div class="logo">
           <a href="index.html" aria-label="Accueil Xamaflix">
@@ -25,17 +30,25 @@
         </div>
         <ul>
           <li><a href="/" aria-current="page">Accueil</a></li>
-          <li><a href="/films">Films</a></li>
-          <li><a href="/series">Séries</a></li>
-          <li><a href="/ma-liste">Ma Liste</a></li>
+          <li><a href="html/films.html">Films</a></li>
+          <li><a href="html/series.html">Séries</a></li>
+          <li><a href="html/maListe.html">Ma Liste</a></li>
         </ul>
         <div class="user-zone">
-          <form role="search">
-            <input
-              type="search"
-              placeholder="Rechercher..."
-              aria-label="Rechercher un film ou une série"
-            />
+          <form role="search" aria-label="Rechercher sur le site">
+            <div class="search-container">
+              <input
+                type="search"
+                id="search"
+                name="search"
+                placeholder="Rechercher..."
+                aria-label="Rechercher un film ou une série"
+                required
+              />
+              <button type="submit" aria-label="Lancer la recherche">
+                <span class="sr-only">Rechercher</span>
+              </button>
+            </div>
           </form>
           <div class="profile-menu">
             <button aria-expanded="false">Mon Profil</button>
@@ -44,16 +57,16 @@
       </nav>
     </header>
 
-    <main>
+   <main id="main-content">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-content">
-          <h2 id="vedette-title">Le film en vedette</h2>
+          <h2 id="section-title">Film en vedette</h2>
+          <h3 id="hero-title">Inception</h3>
           <img
             src="images/films/inception.webp"
             alt="Affiche du film Inception"
             class="hero-background"
           />
-          <h3 id="hero-title">Inception</h3>
           <p>
             Un voleur qui s'infiltre dans les rêves des autres pour voler leurs
             secrets découvre qu'il doit réaliser l'impossible : planter une idée
@@ -76,15 +89,45 @@
         <div class="movie-grid">
           <article>
             <h3>The Dark Knight</h3>
+            <img
+              src="images/films/darknight.webp"
+              alt="Affiche du film The Dark Knight"
+            />
+            <p>
+              Dans ce second volet, Batman livre un combat sans merci contre le Joker
+              dans une Gotham City plongée dans le chaos. Un affrontement épique entre
+              l'ordre et le chaos.
+            </p>
             <div class="movie-meta">
               <span>2008</span> • <span>2h32</span> • <span>4.8/5</span>
               <p>Action, Crime, Drama</p>
             </div>
-             <div class="hero-buttons">
-            <button type="button">Lecture</button>
-            <button type="button">Plus d'infos</button>
-            <button type="button">+ Ma Liste</button>
-          </div>
+            <div class="hero-buttons">
+              <button type="button">Lecture</button>
+              <button type="button">Plus d'infos</button>
+              <button type="button">+ Ma Liste</button>
+            </div>
+          </article>
+
+          <article>
+            <h3>Star Wars : Un Nouvel Espoir</h3>
+            <img
+              src="images/films/star-wars.webp"
+              alt="Affiche du film Star Wars : Un Nouvel Espoir"
+            />
+            <p>
+              Luke Skywalker rejoint la rébellion galactique pour combattre l'Empire et
+              son arme ultime, l'Étoile de la Mort, guidé par la Force et de nouveaux alliés.
+            </p>
+            <div class="movie-meta">
+              <span>1977</span> • <span>2h01</span> • <span>4.8/5</span>
+              <p>Science-Fiction, Aventure, Action</p>
+            </div>
+            <div class="hero-buttons">
+              <button type="button">Lecture</button>
+              <button type="button">Plus d'infos</button>
+              <button type="button">+ Ma Liste</button>
+            </div>
           </article>
         </div>
       </section>
@@ -94,32 +137,94 @@
         <div class="movie-grid">
           <article>
             <h3>The Matrix</h3>
+            <img
+              src="images/films/matrix.webp"
+              alt="Affiche du film The Matrix"
+            />
+            <p>
+              Un programmeur découvre que le monde tel qu'il le connaît est une simulation
+              créée par des machines. Il rejoint une rébellion pour libérer l'humanité de
+              cet asservissement virtuel.
+            </p>
             <div class="movie-meta">
               <span>1999</span> • <span>2h16</span> • <span>4.5/5</span>
               <p>Action, Sci-Fi</p>
             </div>
-             <div class="hero-buttons">
-            <button type="button">Lecture</button>
-            <button type="button">Plus d'infos</button>
-            <button type="button">+ Ma Liste</button>
-          </div>
+            <div class="hero-buttons">
+              <button type="button">Lecture</button>
+              <button type="button">Plus d'infos</button>
+              <button type="button">+ Ma Liste</button>
+            </div>
+          </article>
+
+          <article>
+            <h3>Forrest Gump</h3>
+            <img
+              src="images/films/forrest_gump.jpg"
+              alt="Affiche du film Forrest Gump"
+            />
+            <p>
+              L'histoire extraordinaire d'un homme ordinaire qui traverse les moments
+              les plus marquants de l'histoire américaine, inspirant tous ceux qu'il
+              rencontre par sa candeur et son optimisme.
+            </p>
+            <div class="movie-meta">
+              <span>1994</span> • <span>2h22</span> • <span>4.7/5</span>
+              <p>Drame, Comédie, Romance</p>
+            </div>
+            <div class="hero-buttons">
+              <button type="button">Lecture</button>
+              <button type="button">Plus d'infos</button>
+              <button type="button">+ Ma Liste</button>
+            </div>
           </article>
         </div>
       </section>
+
       <section aria-labelledby="new-releases-title">
         <h2 id="new-releases-title">Nouveautés</h2>
         <div class="movie-grid">
           <article>
             <h3>Interstellar</h3>
+            <img
+              src="images/films/interstellar.webp"
+              alt="Affiche du film Interstellar"
+            />
+            <p>
+              Dans un futur où la Terre devient inhabitable, un groupe d'explorateurs
+              entreprend un voyage interstellaire pour trouver une nouvelle planète
+              habitable pour l'humanité.
+            </p>
             <div class="movie-meta">
               <span>2014</span> • <span>2h49</span> • <span>4.7/5</span>
               <p>Sci-Fi, Drama</p>
+            </div>
+            <div class="hero-buttons">
+              <button type="button">Lecture</button>
+              <button type="button">Plus d'infos</button>
+              <button type="button">+ Ma Liste</button>
+            </div>
+          </article>
 
-               <div class="hero-buttons">
-            <button type="button">Lecture</button>
-            <button type="button">Plus d'infos</button>
-            <button type="button">+ Ma Liste</button>
-          </div>
+          <article>
+            <h3>Pulp Fiction</h3>
+            <img
+              src="images/films/pulp_fiction.jpg"
+              alt="Affiche du film Pulp Fiction"
+            />
+            <p>
+              Les destins entremêlés de criminels, boxeurs, gangsters et autres
+              personnages hauts en couleur dans le Los Angeles des années 90, dans
+              une narration non linéaire explosive.
+            </p>
+            <div class="movie-meta">
+              <span>1994</span> • <span>2h34</span> • <span>4.9/5</span>
+              <p>Crime, Drame, Thriller</p>
+            </div>
+            <div class="hero-buttons">
+              <button type="button">Lecture</button>
+              <button type="button">Plus d'infos</button>
+              <button type="button">+ Ma Liste</button>
             </div>
           </article>
         </div>
@@ -129,7 +234,7 @@
     <footer>
       <div class="footer-content">
         <div class="footer-links">
-          <h2>Liens utiles</h2>
+          <h3>Liens utiles</h3>
           <ul>
             <li><a href="/aide">Aide</a></li>
             <li><a href="/contact">Contact</a></li>
@@ -138,7 +243,7 @@
           </ul>
         </div>
         <div class="social-links">
-          <h2>Suivez-nous</h2>
+          <h3>Suivez-nous</h3>
           <ul>
             <li><a href="#" aria-label="Facebook">Facebook</a></li>
             <li><a href="#" aria-label="Twitter">Twitter</a></li>
