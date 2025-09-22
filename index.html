@@ -1,11 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Plateforme de streaming de films et séries"
+    />
+    <title>Xamaflix - Votre plateforme de streaming</title>
+  </head>
+  <body>
+    <header>
+        <h1 class="sr-only">Xamaflix - Plateforme de streaming</h1>
+      <nav aria-label="Navigation principale">
+        <div class="logo">
+          <a href="index.html" aria-label="Accueil Xamaflix">
+            <img
+              src="images/logo.png"
+              alt="Logo Xamaflix"
+              width="120"
+              height="40"
+            />
+          </a>
+        </div>
+        <ul>
+          <li><a href="/" aria-current="page">Accueil</a></li>
+          <li><a href="/films">Films</a></li>
+          <li><a href="/series">Séries</a></li>
+          <li><a href="/ma-liste">Ma Liste</a></li>
+        </ul>
+        <div class="user-zone">
+          <form role="search">
+            <input
+              type="search"
+              placeholder="Rechercher..."
+              aria-label="Rechercher un film ou une série"
+            />
+          </form>
+          <div class="profile-menu">
+            <button aria-expanded="false">Mon Profil</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <h2 id="vedette-title">Le film en vedette</h2>
+          <img
+            src="images/films/inception.webp"
+            alt="Affiche du film Inception"
+            class="hero-background"
+          />
+          <h3 id="hero-title">Inception</h3>
+          <p>
+            Un voleur qui s'infiltre dans les rêves des autres pour voler leurs
+            secrets découvre qu'il doit réaliser l'impossible : planter une idée
+            plutôt que de la voler.
+          </p>
+          <div class="movie-meta">
+            <span>2010</span> • <span>2h28</span> • <span>4.5/5</span> •
+            <span>Sci-Fi, Thriller</span>
+          </div>
+          <div class="hero-buttons">
+            <button type="button">Lecture</button>
+            <button type="button">Plus d'infos</button>
+            <button type="button">+ Ma Liste</button>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="trending-title">
+        <h2 id="trending-title">Tendances actuelles</h2>
+        <div class="movie-grid">
+          <article>
+            <h3>The Dark Knight</h3>
+            <div class="movie-meta">
+              <span>2008</span> • <span>2h32</span> • <span>4.8/5</span>
+              <p>Action, Crime, Drama</p>
+            </div>
+             <div class="hero-buttons">
+            <button type="button">Lecture</button>
+            <button type="button">Plus d'infos</button>
+            <button type="button">+ Ma Liste</button>
+          </div>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="recommended-title">
+        <h2 id="recommended-title">Recommandés pour vous</h2>
+        <div class="movie-grid">
+          <article>
+            <h3>The Matrix</h3>
+            <div class="movie-meta">
+              <span>1999</span> • <span>2h16</span> • <span>4.5/5</span>
+              <p>Action, Sci-Fi</p>
+            </div>
+             <div class="hero-buttons">
+            <button type="button">Lecture</button>
+            <button type="button">Plus d'infos</button>
+            <button type="button">+ Ma Liste</button>
+          </div>
+          </article>
+        </div>
+      </section>
+      <section aria-labelledby="new-releases-title">
+        <h2 id="new-releases-title">Nouveautés</h2>
+        <div class="movie-grid">
+          <article>
+            <h3>Interstellar</h3>
+            <div class="movie-meta">
+              <span>2014</span> • <span>2h49</span> • <span>4.7/5</span>
+              <p>Sci-Fi, Drama</p>
+
+               <div class="hero-buttons">
+            <button type="button">Lecture</button>
+            <button type="button">Plus d'infos</button>
+            <button type="button">+ Ma Liste</button>
+          </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-links">
+          <h2>Liens utiles</h2>
+          <ul>
+            <li><a href="/aide">Aide</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/mentions-legales">Mentions légales</a></li>
+            <li><a href="/conditions">Conditions d'utilisation</a></li>
+          </ul>
+        </div>
+        <div class="social-links">
+          <h2>Suivez-nous</h2>
+          <ul>
+            <li><a href="#" aria-label="Facebook">Facebook</a></li>
+            <li><a href="#" aria-label="Twitter">Twitter</a></li>
+            <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="legal">
+          <p>&copy; 2025 Xamaflix. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
