@@ -10,6 +10,13 @@
       name="description"
       content="Plateforme de streaming de films et séries"
     />
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/style.css">
     <title>Xamaflix - Votre plateforme de streaming</title>
   </head>
@@ -17,243 +24,458 @@
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
     <header>
       <h1 class="sr-only">Xamaflix - Plateforme de streaming</h1>
-      <nav aria-label="Navigation principale">
-        <div class="logo">
-          <a href="index.html" aria-label="Accueil Xamaflix">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Navigation principale">
+        <div class="container-fluid">
+          <!-- Logo -->
+          <a class="navbar-brand" href="index.html" aria-label="Accueil Xamaflix">
             <img
               src="images/logo.png"
               alt="Logo Xamaflix"
               width="120"
               height="40"
+              class="d-inline-block align-text-top"
             />
           </a>
-        </div>
-        <ul>
-          <li><a href="/" aria-current="page">Accueil</a></li>
-          <li><a href="html/films.html">Films</a></li>
-          <li><a href="html/series.html">Séries</a></li>
-          <li><a href="html/maListe.html">Ma Liste</a></li>
-        </ul>
-        <div class="user-zone">
-          <form role="search" aria-label="Rechercher sur le site">
-            <div class="search-container">
-              <input
-                type="search"
-                id="search"
-                name="search"
-                placeholder="Rechercher..."
-                aria-label="Rechercher un film ou une série"
-                required
-              />
-              <button type="submit" aria-label="Lancer la recherche">
-                <span class="sr-only">Rechercher</span>
-              </button>
+
+          <!-- Toggler pour mobile -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Navigation principale -->
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="html/films.html">Films</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="html/series.html">Séries</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="html/maListe.html">Ma Liste</a>
+              </li>
+            </ul>
+
+            <!-- Zone utilisateur -->
+            <div class="d-flex align-items-center">
+              <!-- Barre de recherche -->
+              <form class="d-flex me-3" role="search" aria-label="Rechercher sur le site">
+                <input
+                  class="form-control form-control-sm"
+                  type="search"
+                  id="search"
+                  name="search"
+                  placeholder="Rechercher..."
+                  aria-label="Rechercher un film ou une série"
+                  style="width: 250px;"
+                />
+                <button class="btn btn-outline-danger btn-sm ms-2" type="submit" aria-label="Lancer la recherche">
+                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
+                  <span class="sr-only">Rechercher</span>
+                </button>
+              </form>
+
+              <!-- Menu profil avec dropdown -->
+              <div class="dropdown">
+                <button
+                  class="btn btn-outline-light btn-sm dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Mon Profil
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="#">Mon Compte</a></li>
+                  <li><a class="dropdown-item" href="#">Paramètres</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Déconnexion</a></li>
+                </ul>
+              </div>
             </div>
-          </form>
-          <div class="profile-menu">
-            <button aria-expanded="false">Mon Profil</button>
           </div>
         </div>
       </nav>
     </header>
 
-   <main id="main-content">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-content">
-          <h2 id="section-title">Film en vedette</h2>
-          <h3 id="hero-title">Inception</h3>
-          <img
-            src="images/films/inception.webp"
-            alt="Affiche du film Inception"
-            class="hero-background"
-          />
-          <p>
-            Un voleur qui s'infiltre dans les rêves des autres pour voler leurs
-            secrets découvre qu'il doit réaliser l'impossible : planter une idée
-            plutôt que de la voler.
-          </p>
-          <div class="movie-meta">
-            <span>2010</span> • <span>2h28</span> • <span>4.5/5</span> •
-            <span>Sci-Fi, Thriller</span>
+   <main id="main-content" style="padding-top: 76px;">
+      <section class="hero position-relative overflow-hidden" aria-labelledby="hero-title" style="min-height: 70vh;">
+        <img
+          src="images/films/inception.webp"
+          alt="Affiche du film Inception"
+          class="position-absolute top-0 start-0 w-100 h-100"
+          style="object-fit: cover; z-index: 1; filter: brightness(0.4);"
+        />
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(45deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%); z-index: 2;"></div>
+
+        <div class="container position-relative h-100 d-flex align-items-center" style="z-index: 3; min-height: 70vh;">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="hero-content">
+                <span class="badge bg-danger mb-2" id="section-title">🔥 Film en vedette</span>
+                <h1 class="display-3 fw-bold text-white mb-3" id="hero-title">Inception</h1>
+                <p class="lead text-white-50 mb-4">
+                  Un voleur qui s'infiltre dans les rêves des autres pour voler leurs
+                  secrets découvre qu'il doit réaliser l'impossible : planter une idée
+                  plutôt que de la voler.
+                </p>
+                <div class="movie-meta mb-4">
+                  <div class="d-flex flex-wrap gap-3 text-white-50">
+                    <span class="d-flex align-items-center">
+                      <svg width="16" height="16" class="me-1" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                      </svg>
+                      2010
+                    </span>
+                    <span class="d-flex align-items-center">
+                      <svg width="16" height="16" class="me-1" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                      </svg>
+                      2h28
+                    </span>
+                    <span class="d-flex align-items-center text-warning">
+                      ⭐ 4.5/5
+                    </span>
+                  </div>
+                  <div class="mt-2">
+                    <span class="badge bg-primary me-1">Sci-Fi</span>
+                    <span class="badge bg-primary">Thriller</span>
+                  </div>
+                </div>
+                <div class="hero-buttons d-flex gap-3 flex-wrap">
+                  <button type="button" class="btn btn-danger btn-lg px-4">
+                    <svg width="20" height="20" class="me-2" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                      <path d="M6.271 5.055a.5.5 0 0 1 .52.04L11 6.7a.5.5 0 0 1 0 .6L6.791 9.915a.5.5 0 0 1-.791-.408V5.493a.5.5 0 0 1 .271-.438z"/>
+                    </svg>
+                    Lecture
+                  </button>
+                  <button type="button" class="btn btn-outline-light px-4">
+                    <svg width="16" height="16" class="me-2" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                      <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                    </svg>
+                    Plus d'infos
+                  </button>
+                  <button type="button" class="btn btn-outline-light">
+                    <svg width="16" height="16" class="me-2" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg>
+                    Ma Liste
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="hero-buttons">
-            <button type="button">Lecture</button>
-            <button type="button">Plus d'infos</button>
-            <button type="button">+ Ma Liste</button>
+        </div>
+      </section>
+
+      <section aria-labelledby="trending-title" class="container-fluid py-5">
+        <h2 id="trending-title" class="text-center mb-4">Tendances actuelles</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="card bg-dark text-white h-100 movie-card">
+              <img
+                src="images/films/darknight.webp"
+                alt="Affiche du film The Dark Knight"
+                class="card-img-top"
+                style="height: 400px; object-fit: cover;"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">The Dark Knight</h5>
+                <p class="card-text flex-grow-1">
+                  Dans ce second volet, Batman livre un combat sans merci contre le Joker
+                  dans une Gotham City plongée dans le chaos. Un affrontement épique entre
+                  l'ordre et le chaos.
+                </p>
+                <div class="movie-meta mb-3">
+                  <div class="d-flex justify-content-between text-muted small">
+                    <span>2008</span>
+                    <span>2h32</span>
+                    <span class="text-warning">⭐ 4.8/5</span>
+                  </div>
+                  <div class="mt-1">
+                    <span class="badge bg-primary me-1">Action</span>
+                    <span class="badge bg-primary me-1">Crime</span>
+                    <span class="badge bg-primary">Drama</span>
+                  </div>
+                </div>
+                <div class="btn-group d-grid gap-2">
+                  <button type="button" class="btn btn-danger">▶️ Lecture</button>
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-light btn-sm">ℹ️ Plus d'infos</button>
+                    <button type="button" class="btn btn-outline-light btn-sm">➕ Ma Liste</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card bg-dark text-white h-100 movie-card">
+              <img
+                src="images/films/star-wars.webp"
+                alt="Affiche du film Star Wars : Un Nouvel Espoir"
+                class="card-img-top"
+                style="height: 400px; object-fit: cover;"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Star Wars : Un Nouvel Espoir</h5>
+                <p class="card-text flex-grow-1">
+                  Luke Skywalker rejoint la rébellion galactique pour combattre l'Empire et
+                  son arme ultime, l'Étoile de la Mort, guidé par la Force et de nouveaux alliés.
+                </p>
+                <div class="movie-meta mb-3">
+                  <div class="d-flex justify-content-between text-muted small">
+                    <span>1977</span>
+                    <span>2h01</span>
+                    <span class="text-warning">⭐ 4.8/5</span>
+                  </div>
+                  <div class="mt-1">
+                    <span class="badge bg-primary me-1">Science-Fiction</span>
+                    <span class="badge bg-primary me-1">Aventure</span>
+                    <span class="badge bg-primary">Action</span>
+                  </div>
+                </div>
+                <div class="btn-group d-grid gap-2">
+                  <button type="button" class="btn btn-danger">▶️ Lecture</button>
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-light btn-sm">ℹ️ Plus d'infos</button>
+                    <button type="button" class="btn btn-outline-light btn-sm">➕ Ma Liste</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="trending-title">
-        <h2 id="trending-title">Tendances actuelles</h2>
-        <div class="movie-grid">
-          <article>
-            <h3>The Dark Knight</h3>
-            <img
-              src="images/films/darknight.webp"
-              alt="Affiche du film The Dark Knight"
-            />
-            <p>
-              Dans ce second volet, Batman livre un combat sans merci contre le Joker
-              dans une Gotham City plongée dans le chaos. Un affrontement épique entre
-              l'ordre et le chaos.
-            </p>
-            <div class="movie-meta">
-              <span>2008</span> • <span>2h32</span> • <span>4.8/5</span>
-              <p>Action, Crime, Drama</p>
+      <section aria-labelledby="recommended-title" class="container-fluid py-5 bg-dark">
+        <h2 id="recommended-title" class="text-center mb-4 text-white">Recommandés pour vous</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div class="col">
+            <div class="card bg-secondary text-white h-100 movie-card">
+              <img
+                src="images/films/matrix.webp"
+                alt="Affiche du film The Matrix"
+                class="card-img-top"
+                style="height: 400px; object-fit: cover;"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">The Matrix</h5>
+                <p class="card-text flex-grow-1">
+                  Un programmeur découvre que le monde tel qu'il le connaît est une simulation
+                  créée par des machines. Il rejoint une rébellion pour libérer l'humanité de
+                  cet asservissement virtuel.
+                </p>
+                <div class="movie-meta mb-3">
+                  <div class="d-flex justify-content-between text-muted small">
+                    <span>1999</span>
+                    <span>2h16</span>
+                    <span class="text-warning">⭐ 4.5/5</span>
+                  </div>
+                  <div class="mt-1">
+                    <span class="badge bg-success me-1">Action</span>
+                    <span class="badge bg-success">Sci-Fi</span>
+                  </div>
+                </div>
+                <div class="btn-group d-grid gap-2">
+                  <button type="button" class="btn btn-danger">▶️ Lecture</button>
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-light btn-sm">ℹ️ Plus d'infos</button>
+                    <button type="button" class="btn btn-outline-light btn-sm">➕ Ma Liste</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="hero-buttons">
-              <button type="button">Lecture</button>
-              <button type="button">Plus d'infos</button>
-              <button type="button">+ Ma Liste</button>
-            </div>
-          </article>
+          </div>
 
-          <article>
-            <h3>Star Wars : Un Nouvel Espoir</h3>
-            <img
-              src="images/films/star-wars.webp"
-              alt="Affiche du film Star Wars : Un Nouvel Espoir"
-            />
-            <p>
-              Luke Skywalker rejoint la rébellion galactique pour combattre l'Empire et
-              son arme ultime, l'Étoile de la Mort, guidé par la Force et de nouveaux alliés.
-            </p>
-            <div class="movie-meta">
-              <span>1977</span> • <span>2h01</span> • <span>4.8/5</span>
-              <p>Science-Fiction, Aventure, Action</p>
+          <div class="col">
+            <div class="card bg-secondary text-white h-100 movie-card">
+              <img
+                src="images/films/forrest_gump.jpg"
+                alt="Affiche du film Forrest Gump"
+                class="card-img-top"
+                style="height: 400px; object-fit: cover;"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Forrest Gump</h5>
+                <p class="card-text flex-grow-1">
+                  L'histoire extraordinaire d'un homme ordinaire qui traverse les moments
+                  les plus marquants de l'histoire américaine, inspirant tous ceux qu'il
+                  rencontre par sa candeur et son optimisme.
+                </p>
+                <div class="movie-meta mb-3">
+                  <div class="d-flex justify-content-between text-muted small">
+                    <span>1994</span>
+                    <span>2h22</span>
+                    <span class="text-warning">⭐ 4.7/5</span>
+                  </div>
+                  <div class="mt-1">
+                    <span class="badge bg-info me-1">Drame</span>
+                    <span class="badge bg-info me-1">Comédie</span>
+                    <span class="badge bg-info">Romance</span>
+                  </div>
+                </div>
+                <div class="btn-group d-grid gap-2">
+                  <button type="button" class="btn btn-danger">▶️ Lecture</button>
+                  <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-light btn-sm">ℹ️ Plus d'infos</button>
+                    <button type="button" class="btn btn-outline-light btn-sm">➕ Ma Liste</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="hero-buttons">
-              <button type="button">Lecture</button>
-              <button type="button">Plus d'infos</button>
-              <button type="button">+ Ma Liste</button>
-            </div>
-          </article>
+          </div>
         </div>
       </section>
 
-      <section aria-labelledby="recommended-title">
-        <h2 id="recommended-title">Recommandés pour vous</h2>
-        <div class="movie-grid">
-          <article>
-            <h3>The Matrix</h3>
-            <img
-              src="images/films/matrix.webp"
-              alt="Affiche du film The Matrix"
-            />
-            <p>
-              Un programmeur découvre que le monde tel qu'il le connaît est une simulation
-              créée par des machines. Il rejoint une rébellion pour libérer l'humanité de
-              cet asservissement virtuel.
-            </p>
-            <div class="movie-meta">
-              <span>1999</span> • <span>2h16</span> • <span>4.5/5</span>
-              <p>Action, Sci-Fi</p>
+      <section aria-labelledby="new-releases-title" class="container-fluid py-5">
+        <h2 id="new-releases-title" class="text-center mb-4">Nouveautés</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-6 g-4">
+          <div class="col">
+            <div class="card bg-dark text-white h-100 movie-card">
+              <img
+                src="images/films/interstellar.webp"
+                alt="Affiche du film Interstellar"
+                class="card-img-top"
+                style="height: 350px; object-fit: cover;"
+              />
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title">Interstellar</h6>
+                <p class="card-text small flex-grow-1">
+                  Dans un futur où la Terre devient inhabitable, un groupe d'explorateurs
+                  entreprend un voyage interstellaire pour trouver une nouvelle planète
+                  habitable pour l'humanité.
+                </p>
+                <div class="movie-meta mb-2">
+                  <div class="d-flex justify-content-between text-muted small">
+                    <span>2014</span>
+                    <span class="text-warning">⭐ 4.7/5</span>
+                  </div>
+                  <div class="mt-1">
+                    <span class="badge bg-warning text-dark me-1">Sci-Fi</span>
+                    <span class="badge bg-warning text-dark">Drama</span>
+                  </div>
+                </div>
+                <div class="d-grid">
+                  <button type="button" class="btn btn-danger btn-sm">▶️ Voir</button>
+                </div>
+              </div>
             </div>
-            <div class="hero-buttons">
-              <button type="button">Lecture</button>
-              <button type="button">Plus d'infos</button>
-              <button type="button">+ Ma Liste</button>
-            </div>
-          </article>
+          </div>
 
-          <article>
-            <h3>Forrest Gump</h3>
-            <img
-              src="images/films/forrest_gump.jpg"
-              alt="Affiche du film Forrest Gump"
-            />
-            <p>
-              L'histoire extraordinaire d'un homme ordinaire qui traverse les moments
-              les plus marquants de l'histoire américaine, inspirant tous ceux qu'il
-              rencontre par sa candeur et son optimisme.
-            </p>
-            <div class="movie-meta">
-              <span>1994</span> • <span>2h22</span> • <span>4.7/5</span>
-              <p>Drame, Comédie, Romance</p>
+          <div class="col">
+            <div class="card bg-dark text-white h-100 movie-card">
+              <img
+                src="images/films/pulp_fiction.jpg"
+                alt="Affiche du film Pulp Fiction"
+                class="card-img-top"
+                style="height: 350px; object-fit: cover;"
+              />
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title">Pulp Fiction</h6>
+                <p class="card-text small flex-grow-1">
+                  Les destins entremêlés de criminels, boxeurs, gangsters et autres
+                  personnages hauts en couleur dans le Los Angeles des années 90, dans
+                  une narration non linéaire explosive.
+                </p>
+                <div class="movie-meta mb-2">
+                  <div class="d-flex justify-content-between text-muted small">
+                    <span>1994</span>
+                    <span class="text-warning">⭐ 4.9/5</span>
+                  </div>
+                  <div class="mt-1">
+                    <span class="badge bg-danger me-1">Crime</span>
+                    <span class="badge bg-danger me-1">Drame</span>
+                    <span class="badge bg-danger">Thriller</span>
+                  </div>
+                </div>
+                <div class="d-grid">
+                  <button type="button" class="btn btn-danger btn-sm">▶️ Voir</button>
+                </div>
+              </div>
             </div>
-            <div class="hero-buttons">
-              <button type="button">Lecture</button>
-              <button type="button">Plus d'infos</button>
-              <button type="button">+ Ma Liste</button>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section aria-labelledby="new-releases-title">
-        <h2 id="new-releases-title">Nouveautés</h2>
-        <div class="movie-grid">
-          <article>
-            <h3>Interstellar</h3>
-            <img
-              src="images/films/interstellar.webp"
-              alt="Affiche du film Interstellar"
-            />
-            <p>
-              Dans un futur où la Terre devient inhabitable, un groupe d'explorateurs
-              entreprend un voyage interstellaire pour trouver une nouvelle planète
-              habitable pour l'humanité.
-            </p>
-            <div class="movie-meta">
-              <span>2014</span> • <span>2h49</span> • <span>4.7/5</span>
-              <p>Sci-Fi, Drama</p>
-            </div>
-            <div class="hero-buttons">
-              <button type="button">Lecture</button>
-              <button type="button">Plus d'infos</button>
-              <button type="button">+ Ma Liste</button>
-            </div>
-          </article>
-
-          <article>
-            <h3>Pulp Fiction</h3>
-            <img
-              src="images/films/pulp_fiction.jpg"
-              alt="Affiche du film Pulp Fiction"
-            />
-            <p>
-              Les destins entremêlés de criminels, boxeurs, gangsters et autres
-              personnages hauts en couleur dans le Los Angeles des années 90, dans
-              une narration non linéaire explosive.
-            </p>
-            <div class="movie-meta">
-              <span>1994</span> • <span>2h34</span> • <span>4.9/5</span>
-              <p>Crime, Drame, Thriller</p>
-            </div>
-            <div class="hero-buttons">
-              <button type="button">Lecture</button>
-              <button type="button">Plus d'infos</button>
-              <button type="button">+ Ma Liste</button>
-            </div>
-          </article>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="footer-content">
-        <div class="footer-links">
-          <h3>Liens utiles</h3>
-          <ul>
-            <li><a href="/aide">Aide</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/mentions-legales">Mentions légales</a></li>
-            <li><a href="/conditions">Conditions d'utilisation</a></li>
-          </ul>
+    <footer class="bg-dark text-white py-5 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <h5 class="text-danger mb-3">Xamaflix</h5>
+            <p class="text-muted">Votre plateforme de streaming préférée pour des films et séries de qualité.</p>
+          </div>
+          <div class="col-md-3 mb-4">
+            <h6 class="mb-3">Liens utiles</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="/aide" class="text-muted text-decoration-none">Aide</a></li>
+              <li class="mb-2"><a href="/contact" class="text-muted text-decoration-none">Contact</a></li>
+              <li class="mb-2"><a href="/mentions-legales" class="text-muted text-decoration-none">Mentions légales</a></li>
+              <li class="mb-2"><a href="/conditions" class="text-muted text-decoration-none">Conditions d'utilisation</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-4">
+            <h6 class="mb-3">Suivez-nous</h6>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-muted" aria-label="Facebook">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+              <a href="#" class="text-muted" aria-label="Twitter">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a>
+              <a href="#" class="text-muted" aria-label="Instagram">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987c6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zm0 21.52c-5.254 0-9.533-4.279-9.533-9.533 0-5.254 4.279-9.533 9.533-9.533 5.254 0 9.533 4.279 9.533 9.533 0 5.254-4.279 9.533-9.533 9.533z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-2 mb-4">
+            <h6 class="mb-3">Catégories</h6>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="/action" class="text-muted text-decoration-none">Action</a></li>
+              <li class="mb-2"><a href="/comedie" class="text-muted text-decoration-none">Comédie</a></li>
+              <li class="mb-2"><a href="/horreur" class="text-muted text-decoration-none">Horreur</a></li>
+              <li class="mb-2"><a href="/sci-fi" class="text-muted text-decoration-none">Sci-Fi</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="social-links">
-          <h3>Suivez-nous</h3>
-          <ul>
-            <li><a href="#" aria-label="Facebook">Facebook</a></li>
-            <li><a href="#" aria-label="Twitter">Twitter</a></li>
-            <li><a href="#" aria-label="Instagram">Instagram</a></li>
-          </ul>
-        </div>
-        <div class="legal">
-          <p>&copy; 2025 Xamaflix. Tous droits réservés.</p>
+        <hr class="border-secondary my-4">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="text-muted mb-0">&copy; 2025 Xamaflix. Tous droits réservés.</p>
+          </div>
+         
         </div>
       </div>
     </footer>
+    <!-- Bootstrap 5 JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

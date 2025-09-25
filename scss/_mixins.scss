@@ -1,0 +1,37 @@
+// Mixins Xamaflix - Fonctions réelles du site
+
+// Mixin pour boutons Xamaflix
+@mixin xamaflix-button($bg-color: $primary-color) {
+  background-color: $bg-color;
+  border: none;
+  padding: 10px 20px;
+  color: $text-color;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: lighten($bg-color, 10%);
+  }
+}
+
+// Mixin pour cartes de films
+@mixin movie-card {
+  background-color: $background-color;
+  border: 1px solid #333;
+  border-radius: 8px;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// Mixin pour badges de genre
+@mixin genre-badge($bg-color) {
+  background-color: $bg-color;
+  color: if($bg-color == $badge-yellow, #000, #fff);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
