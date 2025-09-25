@@ -1,0 +1,27 @@
+// Section hero
+.hero-section {
+  padding-top: 80px; // Compenser la navbar fixed
+  background: linear-gradient(135deg, $primary-dark 0%, lighten($primary-dark, 10%) 100%);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    min-height: 50vh;
+    padding-top: 70px;
+  }
+
+  .display-3 {
+    color: $text-light;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .lead {
+    color: $text-muted;
+    margin-bottom: 2rem;
+  }
+}

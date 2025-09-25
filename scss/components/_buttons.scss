@@ -1,0 +1,19 @@
+// Boutons personnalisés Xamaflix
+.btn-xamaflix {
+  @include xamaflix-button($primary-red);
+
+  &.btn-secondary {
+    @include xamaflix-button($secondary-gray);
+  }
+
+  &.btn-outline {
+    background-color: transparent;
+    border: 1px solid rgba($text-light, 0.3);
+    color: $text-light;
+
+    &:hover {
+      background-color: rgba($text-light, 0.1);
+      border-color: $text-light;
+    }
+  }
+}

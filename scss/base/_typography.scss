@@ -1,0 +1,47 @@
+// Typographie StreamFlix
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  font-size: $font-size-large;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: $font-size-base;
+}
+
+.text-muted {
+  color: $text-muted;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

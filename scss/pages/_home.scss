@@ -1,0 +1,44 @@
+// Page d'accueil spécifique
+.home-page {
+  .container-fluid, .container {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+
+  // Animation fade-in
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // Grille de films
+  .movies-grid {
+    .row {
+      margin-bottom: 2rem;
+    }
+  }
+
+  // Badges de genre
+  .badge {
+    @include genre-badge($accent-blue);
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+
+    &.bg-primary {
+      @include genre-badge($accent-blue);
+    }
+
+    &.bg-warning {
+      @include genre-badge(#ffcc00);
+    }
+
+    &.bg-danger {
+      @include genre-badge($primary-red);
+    }
+  }
+}

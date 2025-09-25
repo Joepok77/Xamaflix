@@ -1,0 +1,41 @@
+// Personnalisation Bootstrap pour Xamaflix
+
+// Variables Bootstrap personnalisées
+$primary: $primary-red;
+$dark: $primary-dark;
+$body-bg: $primary-dark;
+$body-color: $text-light;
+
+// Navbar personnalisations
+$navbar-dark-color: $text-light;
+$navbar-dark-hover-color: $primary-red;
+$navbar-dark-active-color: $primary-red;
+$navbar-dark-brand-color: $primary-red;
+$navbar-dark-brand-hover-color: $primary-red;
+
+// Boutons personnalisés
+$btn-border-radius: 5px;
+$btn-font-weight: 500;
+
+// Cards personnalisées
+$card-bg: lighten($primary-dark, 5%);
+$card-border-color: lighten($primary-dark, 15%);
+$card-border-radius: 8px;
+
+// Forms personnalisées
+$input-bg: lighten($primary-dark, 5%);
+$input-border-color: lighten($primary-dark, 15%);
+$input-color: $text-light;
+$input-focus-border-color: $primary-red;
+$input-focus-box-shadow: 0 0 0 0.25rem rgba($primary-red, 0.25);
+
+// Badges personnalisés
+$badge-border-radius: 4px;
+$badge-font-size: 0.75em;
+
+// Dropdowns
+$dropdown-bg: lighten($primary-dark, 5%);
+$dropdown-border-color: lighten($primary-dark, 15%);
+$dropdown-link-color: $text-light;
+$dropdown-link-hover-color: $text-light;
+$dropdown-link-hover-bg: $primary-red;

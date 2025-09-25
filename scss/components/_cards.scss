@@ -1,0 +1,39 @@
+// Cartes de films
+.movie-card {
+  @include movie-card;
+  overflow: hidden;
+
+  .card-img-top {
+    height: 400px;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+
+    @media (max-width: 768px) {
+      height: 300px;
+    }
+  }
+
+  &:hover .card-img-top {
+    filter: brightness(1.1);
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-title {
+    color: $text-light;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  .card-text {
+    color: $text-muted;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}

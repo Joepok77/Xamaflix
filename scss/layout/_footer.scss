@@ -1,0 +1,24 @@
+// Footer Xamaflix
+footer {
+  background: linear-gradient(135deg, $primary-dark 0%, lighten($primary-dark, 5%) 100%);
+  border-top: 2px solid $primary-red;
+  padding: 2rem 0;
+
+  h5, h6 {
+    color: $text-light;
+    font-weight: 600;
+  }
+
+  p, .text-muted {
+    color: $text-muted;
+  }
+
+  a {
+    color: $text-muted;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-red;
+    }
+  }
+}

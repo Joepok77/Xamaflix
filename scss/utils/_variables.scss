@@ -1,0 +1,37 @@
+// Variables Xamaflix - Charte graphique officielle
+
+// Palette Xamaflix (selon cahier des charges)
+$primary-red: #e50914;      // Rouge principal Xamaflix
+$primary-dark: #221f1f;     // Noir principal
+$secondary-gray: #564d4d;   // Gris secondaire
+$text-light: #ffffff;       // Texte blanc
+$text-muted: #999999;       // Texte atténué
+$accent-blue: #0071eb;      // Bleu accent
+
+// Variables typographie Xamaflix
+$font-primary: 'Netflix Sans', 'Helvetica Neue', sans-serif;
+$font-secondary: 'Arial', sans-serif;
+$font-size-base: 16px;      // Taille de base
+$font-size-large: 24px;     // Grande taille
+$font-size-small: 14px;     // Petite taille
+
+// Espacements
+$spacing-xs: 0.25rem;       // 4px
+$spacing-sm: 0.5rem;        // 8px
+$spacing-md: 1rem;          // 16px
+$spacing-lg: 1.5rem;        // 24px
+$spacing-xl: 2rem;          // 32px
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Z-index
+$z-index-navbar: 1030;
+$z-index-modal: 1050;
+
+// Transitions
+$transition-base: 0.3s ease;
+$transition-fast: 0.2s ease;
