@@ -23,22 +23,53 @@
     }
   }
 
-  // Badges de genre
   .badge {
-    @include genre-badge($accent-blue);
+    background-color: $accent-blue;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     margin-right: 0.25rem;
     margin-bottom: 0.25rem;
 
     &.bg-primary {
-      @include genre-badge($accent-blue);
+      background-color: $accent-blue;
+      color: #fff;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     &.bg-warning {
-      @include genre-badge(#ffcc00);
+      background-color: #ffcc00;
+      color: #fff;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     &.bg-danger {
-      @include genre-badge($primary-red);
+      background-color: $primary-red;
+      color: #fff;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
   }
 }

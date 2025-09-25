@@ -1,31 +1,20 @@
-// Xamaflix - Main SASS file
-// Architecture 7-1 Pattern
 
-// 1. Utils - Variables et mixins (doivent être en premier)
 @import 'utils/variables';
 @import 'utils/mixins';
-
-// 2. Vendors - Librairies externes
 @import 'vendors/bootstrap-custom';
-
-// 3. Base - Reset et éléments de base
 @import 'base/reset';
 @import 'base/typography';
-
-// 4. Layout - Sections principales
 @import 'layout/header';
 @import 'layout/hero';
 @import 'layout/footer';
-
-// 5. Components - Composants réutilisables
 @import 'components/navigation';
 @import 'components/buttons';
 @import 'components/cards';
-
-// 6. Pages - Styles spécifiques aux pages
+@import 'components/carousel';
+@import 'components/search';
 @import 'pages/home';
 
-// 7. Custom - Styles supplémentaires Xamaflix
+
 .scrollbar-custom {
   &::-webkit-scrollbar {
     width: 12px;
@@ -45,7 +34,6 @@
   }
 }
 
-// Application du scrollbar custom au body
 body {
   @extend .scrollbar-custom;
 }

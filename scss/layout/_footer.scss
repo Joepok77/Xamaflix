@@ -1,24 +1,62 @@
-// Footer Xamaflix
+// Footer Xamaflix - Correction visibilité
 footer {
   background: linear-gradient(135deg, $primary-dark 0%, lighten($primary-dark, 5%) 100%);
   border-top: 2px solid $primary-red;
   padding: 2rem 0;
 
   h5, h6 {
-    color: $text-light;
+    color: $text-light !important;
     font-weight: 600;
   }
 
   p, .text-muted {
-    color: $text-muted;
+    color: $text-muted !important;
   }
 
   a {
-    color: $text-muted;
+    color: $text-muted !important;
     transition: color 0.3s ease;
 
     &:hover {
-      color: $primary-red;
+      color: $primary-red !important;
+    }
+  }
+
+  // Animations réseaux sociaux uniquement
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba($text-light, 0.1);
+    border-radius: 50%;
+    color: $text-muted;
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 5px 15px rgba($primary-red, 0.3);
+    }
+
+    &.facebook:hover {
+      background: #3b5998;
+      color: white;
+    }
+
+    &.twitter:hover {
+      background: #1da1f2;
+      color: white;
+    }
+
+    &.instagram:hover {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: white;
+    }
+
+    &.youtube:hover {
+      background: #ff0000;
+      color: white;
     }
   }
 }

@@ -26,7 +26,6 @@
       <h1 class="sr-only">Xamaflix - Plateforme de streaming</h1>
       <nav class="navbar navbar-expand-lg navbar-xamaflix fixed-top" aria-label="Navigation principale">
         <div class="container-fluid">
-          <!-- Logo -->
           <a class="navbar-brand" href="index.html" aria-label="Accueil Xamaflix">
             <img
               src="images/logo.png"
@@ -37,7 +36,6 @@
             />
           </a>
 
-          <!-- Toggler pour mobile -->
           <button
             class="navbar-toggler"
             type="button"
@@ -51,7 +49,6 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- Navigation principale -->
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Accueil</a>
@@ -67,28 +64,22 @@
               </li>
             </ul>
 
-            <!-- Zone utilisateur -->
             <div class="d-flex align-items-center">
-              <!-- Barre de recherche -->
-              <form class="d-flex me-3" role="search" aria-label="Rechercher sur le site">
+              <div class="search-container me-3">
                 <input
-                  class="form-control form-control-sm"
                   type="search"
-                  id="search"
+                  class="search-input"
+                  id="xamaflix-search"
                   name="search"
-                  placeholder="Rechercher..."
+                  placeholder="Rechercher des films, séries..."
                   aria-label="Rechercher un film ou une série"
-                  style="width: 250px;"
+                  autocomplete="off"
                 />
-                <button class="btn btn-outline-danger btn-sm ms-2" type="submit" aria-label="Lancer la recherche">
-                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                  </svg>
-                  <span class="sr-only">Rechercher</span>
-                </button>
-              </form>
+                <svg class="search-icon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+              </div>
 
-              <!-- Menu profil avec dropdown -->
               <div class="dropdown">
                 <button
                   class="btn btn-outline-light btn-sm dropdown-toggle"
@@ -148,9 +139,9 @@
                       </svg>
                       2h28
                     </span>
-                    <span class="d-flex align-items-center text-warning">
-                      ⭐ 4.5/5
-                    </span>
+                    <div class="d-flex align-items-center">
+                      <span class="text-warning me-2">⭐ 4.5/5</span>
+                    </div>
                   </div>
                   <div class="mt-2">
                     <span class="badge bg-primary me-1">Sci-Fi</span>
@@ -185,6 +176,111 @@
         </div>
       </section>
 
+      <!-- Carousel Films en Vedette -->
+      <section class="container-fluid py-5 bg-dark">
+        <h2 class="text-center text-white mb-4">🎬 Films en Vedette</h2>
+        <div class="container">
+          <div id="featuredCarousel" class="carousel slide carousel-fade xamaflix-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+
+            <!-- Indicateurs -->
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#featuredCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Slides -->
+            <div class="carousel-inner">
+              <!-- Slide 1: The Dark Knight -->
+              <div class="carousel-item active">
+                <div class="row align-items-center">
+                  <div class="col-md-6">
+                    <img src="images/films/darknight.webp" alt="The Dark Knight" class="img-fluid rounded carousel-image">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="carousel-content">
+                      <h3 class="text-white mb-3">The Dark Knight</h3>
+                      <p class="text-muted mb-3">
+                        Batman doit accepter l'aide du commissaire Gordon et du procureur Harvey Dent pour démanteler le crime organisé qui gangrène Gotham City. Mais ils sous-estiment le chaos que va déchaîner un criminel extraordinaire : le Joker.
+                      </p>
+                      <div class="mb-3">
+                        <span class="badge bg-primary me-1">Action</span>
+                        <span class="badge bg-primary me-1">Crime</span>
+                        <span class="badge bg-warning text-dark">Drame</span>
+                      </div>
+                      <div class="d-flex gap-2">
+                        <button class="btn btn-xamaflix">▶️ Regarder</button>
+                        <button class="btn btn-xamaflix btn-outline">ℹ️ Plus d'infos</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2: Interstellar -->
+              <div class="carousel-item">
+                <div class="row align-items-center">
+                  <div class="col-md-6">
+                    <img src="images/films/interstellar.webp" alt="Interstellar" class="img-fluid rounded carousel-image">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="carousel-content">
+                      <h3 class="text-white mb-3">Interstellar</h3>
+                      <p class="text-muted mb-3">
+                        Dans un futur où la Terre devient inhabitable, un groupe d'explorateurs entreprend un voyage interstellaire pour trouver une nouvelle planète habitable pour l'humanité.
+                      </p>
+                      <div class="mb-3">
+                        <span class="badge bg-warning text-dark me-1">Sci-Fi</span>
+                        <span class="badge bg-warning text-dark">Drama</span>
+                      </div>
+                      <div class="d-flex gap-2">
+                        <button class="btn btn-xamaflix">▶️ Regarder</button>
+                        <button class="btn btn-xamaflix btn-outline">ℹ️ Plus d'infos</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3: Pulp Fiction -->
+              <div class="carousel-item">
+                <div class="row align-items-center">
+                  <div class="col-md-6">
+                    <img src="images/films/pulp_fiction.jpg" alt="Pulp Fiction" class="img-fluid rounded carousel-image">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="carousel-content">
+                      <h3 class="text-white mb-3">Pulp Fiction</h3>
+                      <p class="text-muted mb-3">
+                        Les destins entremêlés de criminels, boxeurs, gangsters et autres personnages hauts en couleur dans le Los Angeles des années 90, dans une narration non linéaire explosive.
+                      </p>
+                      <div class="mb-3">
+                        <span class="badge bg-danger me-1">Crime</span>
+                        <span class="badge bg-danger">Thriller</span>
+                      </div>
+                      <div class="d-flex gap-2">
+                        <button class="btn btn-xamaflix">▶️ Regarder</button>
+                        <button class="btn btn-xamaflix btn-outline">ℹ️ Plus d'infos</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contrôles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#featuredCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Précédent</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#featuredCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Suivant</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
       <section aria-labelledby="trending-title" class="container-fluid py-5">
         <h2 id="trending-title" class="text-center mb-4">Tendances actuelles</h2>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -207,7 +303,7 @@
                   <div class="d-flex justify-content-between text-muted small">
                     <span>2008</span>
                     <span>2h32</span>
-                    <span class="text-warning">⭐ 4.8/5</span>
+                    <span class="text-warning small">⭐ 5/5</span>
                   </div>
                   <div class="mt-1">
                     <span class="badge bg-primary me-1">Action</span>
@@ -244,7 +340,7 @@
                   <div class="d-flex justify-content-between text-muted small">
                     <span>1977</span>
                     <span>2h01</span>
-                    <span class="text-warning">⭐ 4.8/5</span>
+                    <span class="text-warning small">⭐ 5/5</span>
                   </div>
                   <div class="mt-1">
                     <span class="badge bg-primary me-1">Science-Fiction</span>
@@ -287,7 +383,7 @@
                   <div class="d-flex justify-content-between text-muted small">
                     <span>1999</span>
                     <span>2h16</span>
-                    <span class="text-warning">⭐ 4.5/5</span>
+                    <span class="text-warning small">⭐ 4.5/5</span>
                   </div>
                   <div class="mt-1">
                     <span class="badge bg-success me-1">Action</span>
@@ -324,7 +420,7 @@
                   <div class="d-flex justify-content-between text-muted small">
                     <span>1994</span>
                     <span>2h22</span>
-                    <span class="text-warning">⭐ 4.7/5</span>
+                    <span class="text-warning small">⭐ 5/5</span>
                   </div>
                   <div class="mt-1">
                     <span class="badge bg-info me-1">Drame</span>
@@ -366,7 +462,7 @@
                 <div class="movie-meta mb-2">
                   <div class="d-flex justify-content-between text-muted small">
                     <span>2014</span>
-                    <span class="text-warning">⭐ 4.7/5</span>
+                    <span class="text-warning small">⭐ 5/5</span>
                   </div>
                   <div class="mt-1">
                     <span class="badge bg-warning text-dark me-1">Sci-Fi</span>
@@ -398,7 +494,7 @@
                 <div class="movie-meta mb-2">
                   <div class="d-flex justify-content-between text-muted small">
                     <span>1994</span>
-                    <span class="text-warning">⭐ 4.9/5</span>
+                    <span class="text-warning small">⭐ 5/5</span>
                   </div>
                   <div class="mt-1">
                     <span class="badge bg-danger me-1">Crime</span>
@@ -435,19 +531,24 @@
           <div class="col-md-3 mb-4">
             <h6 class="mb-3">Suivez-nous</h6>
             <div class="d-flex gap-3">
-              <a href="#" class="text-muted" aria-label="Facebook">
+              <a href="#" class="social-icon facebook" aria-label="Facebook">
                 <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </a>
-              <a href="#" class="text-muted" aria-label="Twitter">
+              <a href="#" class="social-icon twitter" aria-label="Twitter">
                 <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                 </svg>
               </a>
-              <a href="#" class="text-muted" aria-label="Instagram">
+              <a href="#" class="social-icon instagram" aria-label="Instagram">
                 <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987c6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zm0 21.52c-5.254 0-9.533-4.279-9.533-9.533 0-5.254 4.279-9.533 9.533-9.533 5.254 0 9.533 4.279 9.533 9.533 0 5.254-4.279 9.533-9.533 9.533z"/>
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+              <a href="#" class="social-icon youtube" aria-label="YouTube">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>
               </a>
             </div>
@@ -477,5 +578,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
   </body>
 </html>
