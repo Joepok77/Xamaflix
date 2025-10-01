@@ -44,15 +44,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const articles = document.querySelectorAll('.card.movie-card');
     const movieCount = articles.length;
 
-    // Créer et ajouter dans le footer comme demandé par Marc
+    // Créer l'élément de comptage
     const countElement = document.createElement('p');
     countElement.textContent = `Catalogue : ${movieCount} films disponibles`;
     countElement.className = 'text-center text-white my-3';
 
-    // Ajouter dans le footer
-    const footer = document.querySelector('footer .container');
-    if (footer) {
-        footer.appendChild(countElement);
+    // Ajouter en haut de la section "Tendances actuelles"
+    const tendancesSection = document.querySelector('section[aria-labelledby="trending-title"]');
+    if (tendancesSection) {
+        tendancesSection.insertBefore(countElement, tendancesSection.firstChild);
     }
 });
 
