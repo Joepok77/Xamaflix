@@ -1,0 +1,138 @@
+/* Styles globaux pour Xamaflix */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #141414;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Effet hover pour les cartes de films */
+.hover-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(229, 9, 20, 0.3);
+}
+
+/* Style pour les inputs de recherche */
+.form-control:focus {
+  border-color: #e50914;
+  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25);
+}
+
+/* Style pour les sélections */
+.form-select:focus {
+  border-color: #e50914;
+  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25);
+}
+
+/* Placeholder pour les inputs sombres */
+.form-control::placeholder {
+  color: #6c757d;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e50914;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b20710;
+}
+
+/* Animation pour les spinners */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Style pour la navbar */
+.navbar-dark {
+  background-color: #000000 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Liens de navigation */
+.nav-link {
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #e50914 !important;
+}
+
+.nav-link.active {
+  color: #e50914 !important;
+  font-weight: bold;
+}
+
+/* Badges */
+.badge {
+  font-size: 0.85rem;
+  padding: 0.4em 0.6em;
+}
+
+/* Cartes sombres */
+.card.bg-dark {
+  border: 1px solid #333;
+}
+
+.card.bg-dark:hover {
+  border-color: #e50914;
+}
+
+/* Alertes */
+.alert {
+  border-radius: 8px;
+}
+
+/* Boutons */
+.btn-danger {
+  background-color: #e50914;
+  border-color: #e50914;
+}
+
+.btn-danger:hover {
+  background-color: #b20710;
+  border-color: #b20710;
+}
+
+.btn-outline-danger:hover {
+  background-color: #e50914;
+  border-color: #e50914;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .col-md-3 {
+    width: 50%;
+  }
+}
