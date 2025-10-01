@@ -78,28 +78,127 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ===================================
-// EXERCICE 4 : Recherche
+// EXERCICE 4 : Recherche avec popup
 // ===================================
 
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.querySelector('#search');
 
+    // Créer la popup de recherche
+    const searchPopup = document.createElement('div');
+    searchPopup.className = 'search-popup';
+    searchPopup.innerHTML = `
+        <div class="search-popup-content">
+            <div class="search-popup-header">
+                <button class="search-popup-back">← Retour</button>
+            </div>
+            <div class="search-results" id="search-results"></div>
+        </div>
+    `;
+    document.body.appendChild(searchPopup);
+
+    // Récupérer tous les films une seule fois
+    let allMovies = [];
+    const movieCards = document.querySelectorAll('.card.movie-card');
+
+    movieCards.forEach(card => {
+        const titleElement = card.querySelector('h5') || card.querySelector('h6');
+        const imageElement = card.querySelector('.card-img-top');
+
+        if (titleElement && imageElement) {
+            allMovies.push({
+                title: titleElement.textContent,
+                image: imageElement.src,
+                element: card
+            });
+        }
+    });
+
+    // Ouvrir la popup quand on clique sur la barre de recherche
+    searchInput.addEventListener('focus', function() {
+        searchPopup.style.display = 'block';
+        showAllMovies();
+    });
+
+    // Recherche en temps réel depuis la barre originale
     searchInput.addEventListener('input', function() {
         const searchTerm = this.value.toLowerCase();
-        const articles = document.querySelectorAll('.card.movie-card');
-
-        articles.forEach(article => {
-            // Chercher h5 ou h6 pour le titre selon la structure HTML
-            const titleElement = article.querySelector('h5') || article.querySelector('h6');
-            const title = titleElement ? titleElement.textContent.toLowerCase() : '';
-
-            if (title.includes(searchTerm)) {
-                article.style.display = 'block';
-            } else {
-                article.style.display = 'none';
-            }
-        });
+        if (searchPopup.style.display === 'block') {
+            filterMovies(searchTerm);
+        }
     });
+
+    // Bouton de fermeture
+    const backButton = searchPopup.querySelector('.search-popup-back');
+    backButton.addEventListener('click', closeSearchPopup);
+
+    // Fermer avec Escape seulement (pas de clic en dehors pour permettre l'accès à la barre)
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && searchPopup.style.display === 'block') {
+            closeSearchPopup();
+        }
+    });
+
+    function showAllMovies() {
+        const resultsContainer = document.getElementById('search-results');
+        resultsContainer.innerHTML = '<h4 style="margin-bottom: 20px;">Tous les films disponibles :</h4>';
+
+        allMovies.forEach(movie => {
+            const movieElement = createMovieResultElement(movie);
+            resultsContainer.appendChild(movieElement);
+        });
+    }
+
+    function filterMovies(searchTerm) {
+        const resultsContainer = document.getElementById('search-results');
+
+        if (searchTerm === '') {
+            showAllMovies();
+            return;
+        }
+
+        const filteredMovies = allMovies.filter(movie =>
+            movie.title.toLowerCase().includes(searchTerm)
+        );
+
+        resultsContainer.innerHTML = '';
+
+        if (filteredMovies.length === 0) {
+            resultsContainer.innerHTML = '<div class="no-results">Aucun film trouvé pour "' + searchTerm + '"</div>';
+        } else {
+            resultsContainer.innerHTML = '<h4 style="margin-bottom: 20px;">Résultats de recherche :</h4>';
+            filteredMovies.forEach(movie => {
+                const movieElement = createMovieResultElement(movie);
+                resultsContainer.appendChild(movieElement);
+            });
+        }
+    }
+
+    function createMovieResultElement(movie) {
+        const movieDiv = document.createElement('div');
+        movieDiv.className = 'search-result-item';
+        movieDiv.innerHTML = `
+            <img src="${movie.image}" alt="${movie.title}">
+            <h6>${movie.title}</h6>
+        `;
+
+        // Cliquer sur un film dans la popup ferme la popup et scroll vers le film
+        movieDiv.addEventListener('click', function() {
+            closeSearchPopup();
+            movie.element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            movie.element.style.border = '3px solid #e50914';
+            setTimeout(() => {
+                movie.element.style.border = '';
+            }, 2000);
+        });
+
+        return movieDiv;
+    }
+
+    function closeSearchPopup() {
+        searchPopup.style.display = 'none';
+        searchInput.value = ''; // Vider la barre de recherche
+    }
 });
 
 // ===================================
