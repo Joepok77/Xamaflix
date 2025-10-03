@@ -1,4 +1,3 @@
-// App.jsx pour Xamaflix
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -6,6 +5,7 @@ import MovieDetails from './pages/MovieDetails';
 import Todos from './pages/Todos';
 import Contact from './pages/Contact';
 import MyList from './pages/MyList';
+import Quiz from './pages/Quiz';
 
 function App() {
   return (
@@ -28,7 +28,8 @@ function App() {
             </div>
           } />
           <Route path="/ma-liste" element={<MyList />} />
-          {/* 404 - Page non trouvée */}
+          <Route path="/quiz" element={<Quiz />} />
+          {}
           <Route path="*" element={
             <div className="container mt-5">
               <div className="alert alert-warning">
